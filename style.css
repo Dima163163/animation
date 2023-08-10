@@ -1,0 +1,138 @@
+.progress {
+	position: relative;
+	margin: 40px auto;
+	width: 1000px;
+	height: 30px;
+	border: 1px solid blue;
+	margin-bottom: 100px;
+}
+
+.progress::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 1px;
+	bottom: 1px;
+	left: 1px;
+	background-color: greenyellow;
+	animation: progressLine 10s forwards;
+}
+
+@keyframes progressLine {
+	from {
+		width: 10%;
+	}
+
+	to {
+		width: 90%;
+	}
+}
+
+.play-state {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 100px;
+}
+
+.play-state::before {
+	content: '';
+	display: block;
+	width: 15%;
+	height: 100%;
+	animation-name: animate;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	background-color: aqua;
+}
+
+.play-state:hover::before {
+	animation-play-state: paused;
+}
+
+@keyframes animate {
+		from {
+		width: 15%;
+	}
+
+	to {
+		width: 90%;
+	}
+}
+
+.square {
+	margin: 0 auto;
+	width: 300px;
+	height: 300px;
+	position: relative;
+	border: 2px solid #000;
+}
+
+.square::before {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	border-radius: 50%;
+	background-color: red;
+	width: 20px;
+	height: 20px;
+	animation-name: circle;
+	animation-duration: 8s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes circle {
+	0% {
+		top: 0;
+		left: 0;
+	}
+
+	10% {
+		left: 60px;
+		top: 280px;
+	}
+
+	20% {
+		left: 95px;
+		top: 165px;
+	}
+
+	30% {
+		left: 120px;
+		top: 90px;
+	}
+
+	40% {
+		left: 150px;
+		top: 165px;
+	}
+
+	50% {
+		left: 180px;
+		top: 280px;
+	}
+
+
+	60% {
+		left: 220px;
+		top: 180px;
+	}
+
+
+	70% {
+		left: 250px;
+		top: 280px;
+	}
+
+	90% {
+		left: 270px;
+		top: 250px;
+	}
+
+	100% {
+		left: 280px;
+		top: 280px;
+	}
+}
